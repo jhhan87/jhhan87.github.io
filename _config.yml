@@ -16,23 +16,20 @@ timezone: Asia/Seoul
 
 title: jhhan's git blog
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: she/her. backend developer 
 
 description: >- # used by seo meta and the atom feed
-  backend developer
+  jhhan's gitblog
 
 # Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://jhhan87.github.io"
 
 github:
-  username: jhhan87 # change to your GitHub username
+  username: jhhan87
 
 social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: junghwa han
-  email: junghwa.tasha.han@gmail.com # change to your email address
+  name: jhhan
+  email: junghwa.tasha.han@gmail.com
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/jhhan87 # change to your GitHub homepage
@@ -125,7 +122,6 @@ comments:
     lang: # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
   self_host:
     enabled: # boolean, keep empty means false
