@@ -1,6 +1,24 @@
 [
   
   {
+    "title": "java.lang.OutOfMemoryError- Java heap space error",
+    "url": "/posts/error/",
+    "categories": "Blogging, ErrorNote",
+    "tags": "java, spring boot",
+    "date": "2025-07-31 17:50:00 +0900",
+    "content": "out of memory"
+  },
+  
+  {
+    "title": "Jekyll 간편하게 관리할 수 있는 방법들",
+    "url": "/posts/stream-portfolio-management/",
+    "categories": "Blogging, Etc",
+    "tags": "jekyll, github blog",
+    "date": "2025-07-31 17:00:00 +0900",
+    "content": "정답은 아님. 그냥 리서치."
+  },
+  
+  {
     "title": "Customize the Favicon",
     "url": "/posts/customize-the-favicon/",
     "categories": "Blogging, Tutorial",
