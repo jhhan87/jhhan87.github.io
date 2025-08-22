@@ -38,11 +38,11 @@
 <meta property="og:url" content="http://localhost:4000/about/" />
 <meta property="og:site_name" content="jhhan’s git blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-31T18:10:36+09:00" />
+<meta property="article:published_time" content="2025-08-22T16:30:59+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="About" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","dateModified":"2025-07-31T18:10:36+09:00","datePublished":"2025-07-31T18:10:36+09:00","description":"풀스택으로 시작, 현재 Java backend develop로 일하고 있습니다.","headline":"About","name":"jhhan","sameAs":["https://github.com/jhhan87","https://www.linkedin.com/in/username"],"url":"http://localhost:4000/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","dateModified":"2025-08-22T16:30:59+09:00","datePublished":"2025-08-22T16:30:59+09:00","description":"풀스택으로 시작, 현재 Java backend develop로 일하고 있습니다.","headline":"About","name":"jhhan","sameAs":["https://github.com/jhhan87","https://www.linkedin.com/in/username"],"url":"http://localhost:4000/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -112,12 +112,7 @@
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
-  
 
-  
-    <!-- Image Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -133,13 +128,6 @@
 <!-- layout specified -->
 
 
-  
-
-  
-    <!-- image lazy-loading & popup & clipboard -->
-    
-  
-
 
 
 
@@ -168,23 +156,9 @@
 
   
 
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -192,7 +166,7 @@
 
 
 
-<script defer src="/assets/js/dist/page.min.js"></script>
+<script defer src="/assets/js/dist/commons.min.js"></script>
 
 
 
@@ -212,7 +186,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://jhhan-personal-homepage.s3.ap-northeast-2.amazonaws.com/img/my_avatar.PNG" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <a class="site-title d-block" href="/">jhhan's git blog</a>
     <p class="site-subtitle fst-italic mb-0">she/her. backend developer</p>
@@ -456,6 +430,81 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -470,6 +519,27 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -491,27 +561,43 @@
 
 
 <!-- return -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+<div class="about-page">
+  <!-- 프로필 헤더 -->
+  <section class="profile-header">
+    <div class="profile-image">
+      <a href="https://jhhan-personal-homepage.s3.ap-northeast-2.amazonaws.com/assets/images/profile.jpg" class="popup img-link shimmer"><img src="https://jhhan-personal-homepage.s3.ap-northeast-2.amazonaws.com/assets/images/profile.jpg" alt="About" loading="lazy"></a>
+    </div>
+    <div class="profile-info">
+      <h1>한정화</h1>
+      <p class="subtitle">backend developer</p>
+    </div>
+    <div class="social-links">
+      
+      
+      
+    </div>
+  </section>
 
-
-
-<article class="px-1">
-  
-    
-    
-    <h1 class="dynamic-title">
-      정보
-    </h1>
-    <div class="content">
+  <div class="about-content">
+    <section class="about-section markdown-content">
       <blockquote class="prompt-tip">
   <p>풀스택으로 시작, 현재 Java backend develop로 일하고 있습니다.</p>
 </blockquote>
 
+<h2 id="기술-스택"><span class="me-2">기술 스택</span><a href="#기술-스택" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
 
-    </div>
-  
-</article>
-
+    </section>
+  </div>
+</div>
 
             
           </main>
@@ -542,7 +628,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/error/">java.lang.OutOfMemoryError- Java heap space error</a>
+          <a href="/posts/auth-header-not-found-error/">auth header not found</a>
         </li>
       
         
@@ -556,21 +642,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/customize-the-favicon/">Customize the Favicon</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/getting-started/">Getting Started</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/write-a-new-post/">Writing a New Post</a>
+          <a href="/posts/OutOfMemoryError/">java.lang.OutOfMemoryError- Java heap space error</a>
         </li>
       
     </ul>
@@ -599,6 +671,56 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -637,221 +759,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -869,28 +776,19 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/favicon/">favicon</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/getting-started/">getting started</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/github-blog/">github blog</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/java/">java</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/jekyll/">jekyll</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/typography/">typography</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/github-blog/">github blog</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/writing/">writing</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/http/">http</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/jekyll/">jekyll</a>
       
     </div>
   </section>
@@ -972,6 +870,56 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1010,221 +958,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1242,28 +975,19 @@
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/favicon/">favicon</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/getting-started/">getting started</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/github-blog/">github blog</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/java/">java</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/jekyll/">jekyll</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/spring-boot/">spring boot</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/typography/">typography</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/github-blog/">github blog</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/writing/">writing</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/http/">http</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/jekyll/">jekyll</a>
       
     </div>
   </section>

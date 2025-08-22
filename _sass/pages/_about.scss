@@ -1,0 +1,285 @@
+/* about.md 마크다운 파일용 CSS */
+
+/* about 페이지만 대상으로 스타일링 */
+.page-content .post-content,
+.page-content article,
+body.page-about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* about 페이지 식별을 위한 body 클래스 */
+body[class*="about"] .page-content,
+.page-content:has([href*="about"]) {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* 첫 번째 h1을 프로필 헤더로 스타일링 */
+.post-content h1:first-of-type,
+.page-content h1:first-of-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin: 0 0 3rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  font-size: 2.5rem;
+}
+
+.post-content h1:first-of-type::before,
+.page-content h1:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 나머지 h2들을 섹션 헤더로 스타일링 */
+.post-content h2,
+.page-content h2 {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #667eea;
+  margin: 2rem 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.post-content h2::before,
+.page-content h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* h3들을 서브섹션으로 스타일링 */
+.post-content h3,
+.page-content h3 {
+  color: #667eea;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 0.5rem;
+  margin: 1.5rem 0 1rem 0;
+}
+
+/* 일반 단락들을 카드 스타일로 */
+.post-content p,
+.page-content p {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* 리스트들을 스킬 태그처럼 스타일링 */
+.post-content ul,
+.page-content ul {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.post-content ul li,
+.page-content ul li {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+.post-content ul li:hover,
+.page-content ul li:hover {
+  transform: scale(1.05);
+}
+
+/* 순서 있는 리스트는 타임라인으로 */
+.post-content ol,
+.page-content ol {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  padding-left: 3rem;
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.post-content ol::before,
+.page-content ol::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 2rem;
+  bottom: 2rem;
+  width: 2px;
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+}
+
+.post-content ol li,
+.page-content ol li {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #555;
+}
+
+.post-content ol li::before,
+.page-content ol li::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 1rem;
+  width: 12px;
+  height: 12px;
+  background: #667eea;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #667eea;
+}
+
+/* 인용문을 특별하게 스타일링 */
+.post-content blockquote,
+.page-content blockquote {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  border: none;
+  margin: 2rem 0;
+  font-style: italic;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 테이블을 카드 스타일로 */
+.post-content table,
+.page-content table {
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.post-content table th,
+.page-content table th {
+  background: #667eea;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+}
+
+.post-content table td,
+.page-content table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* 코드 블록 스타일링 */
+.post-content pre,
+.page-content pre {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.post-content code,
+.page-content code {
+  background: #667eea;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.post-content pre code,
+.page-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* 링크 스타일링 */
+.post-content a,
+.page-content a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.post-content a:hover,
+.page-content a:hover {
+  border-bottom-color: #667eea;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .post-content h1:first-of-type,
+  .page-content h1:first-of-type {
+    padding: 2rem 1rem;
+    font-size: 2rem;
+  }
+  
+  .post-content h2,
+  .page-content h2 {
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .post-content p,
+  .post-content ul,
+  .post-content ol,
+  .page-content p,
+  .page-content ul,
+  .page-content ol {
+    padding: 1rem;
+  }
+  
+  .post-content ul,
+  .page-content ul {
+    gap: 0.3rem;
+  }
+  
+  .post-content ul li,
+  .page-content ul li {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

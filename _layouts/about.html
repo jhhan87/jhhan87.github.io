@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="about-page">
+  <!-- 프로필 헤더 -->
+  <section class="profile-header">
+    <div class="profile-image">
+      <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.author.name | default: page.title }}">
+    </div>
+    <div class="profile-info">
+      <h1>{{ site.author.name | default: "한정화" }}</h1>
+      <p class="subtitle">{{ site.author.bio | default: "backend developer" }}</p>
+    </div>
+    <div class="social-links">
+      {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      {% endif %}
+      {% if site.linkedin_username %}
+      <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      {% endif %}
+      {% if site.email %}
+      <a href="mailto:{{ site.email }}">
+        <i class="fas fa-envelope"></i>
+      </a>
+      {% endif %}
+    </div>
+  </section>
+
+  <div class="about-content">
+    <section class="about-section markdown-content">
+      {{ content }}
+    </section>
+  </div>
+</div>
