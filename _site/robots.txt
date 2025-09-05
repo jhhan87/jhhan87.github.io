@@ -1,5 +1,29 @@
+
 User-agent: *
+Disallow: /
 
-Disallow: /norobots/
+User-agent: Googlebot
+Disallow: /
 
-Sitemap: http://localhost:4000/sitemap.xml
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+Crawl-delay: 86400
