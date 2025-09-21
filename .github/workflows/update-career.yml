@@ -1,0 +1,154 @@
+name: Update Career Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-career:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm init -y
+        npm install moment
+        
+    - name: Update career data
+      run: |
+        cat > update-career.js << 'EOF'
+        const fs = require('fs');
+        const moment = require('moment');
+
+        //today
+        const today = moment();
+        
+        //전체 경력
+        const careerHistory = [
+          {
+            company: "akis",
+            startDate: "2011-04-14",
+            endDate: "2014-03-31"
+          },
+          {
+            company: "bhs", 
+            startDate: "2016-01-02",
+            endDate: "2016-06-30"
+          },
+          {
+            company: "sumus",
+            startDate: "2017-03-14",
+            endDate: "2020-12-30"
+          },
+          {
+            company: "dsti",
+            startDate: "2021-01-02",
+            endDate: "2021-08-30"
+          }
+        ];
+
+        //현재 재직중인 회사
+        const currentJob = {
+          company: "ontacthealth",
+          startDate: "2021-09-01",
+          endDate: null
+        };
+
+        //이전 경력들의 총 근무 기간 계산 (월 단위)
+        function calculateTotalPastCareer() {
+          let totalMonths = 0;
+          
+          careerHistory.forEach(job => {
+            const start = moment(job.startDate);
+            const end = moment(job.endDate);
+            const months = end.diff(start, 'months', true);
+            totalMonths += months;
+            
+            console.log(`${job.company}: ${start.format('YYYY-MM-DD')} ~ ${end.format('YYYY-MM-DD')} (${months.toFixed(1)}개월)`);
+          });
+          
+          return totalMonths;
+        }
+
+                // 현재 회사 근무 기간 계산
+        function calculateCurrentCareer() {
+          const start = moment(currentJob.startDate);
+          const months = today.diff(start, 'months', true);
+          const years = today.diff(start, 'years', true);
+          
+          console.log(`${currentJob.company}: ${start.format('YYYY-MM-DD')} ~ 현재 (${months.toFixed(1)}개월, ${years.toFixed(1)}년)`);
+          
+          return {
+            months: months,
+            years: years
+          };
+        }
+
+        // 전체 경력 계산
+        function calculateTotalCareer() {
+          const pastCareerMonths = calculateTotalPastCareer();
+          const currentCareer = calculateCurrentCareer();
+          
+          const totalMonths = pastCareerMonths + currentCareer.months;
+          const totalYears = totalMonths / 12;
+          
+          console.log(`\n=== 경력 요약 ===`);
+          console.log(`과거 경력 총합: ${pastCareerMonths.toFixed(1)}개월`);
+          console.log(`현재 회사: ${currentCareer.months.toFixed(1)}개월 (${currentCareer.years.toFixed(1)}년)`);
+          console.log(`전체 경력: ${totalMonths.toFixed(1)}개월 (${totalYears.toFixed(1)}년)`);
+          
+          return {
+            totalMonths: totalMonths,
+            totalYears: totalYears,
+            currentYears: currentCareer.years,
+            currentMonths: currentCareer.months
+          };
+        }
+
+        // 경력 계산 실행
+        const careerStats = calculateTotalCareer();
+
+        try {
+          // 자기소개 파일 읽기
+          let aboutmd = fs.readFileSync('_tabs/about.md', 'utf8');
+          
+          // 플레이스홀더 교체
+          aboutmd = aboutmd.replace(/{{TOTAL_YEARS}}/g, Math.floor(careerStats.totalYears));
+          aboutmd = aboutmd.replace(/{{TOTAL_YEARS_DECIMAL}}/g, careerStats.totalYears.toFixed(1));
+          aboutmd = aboutmd.replace(/{{CURRENT_YEARS}}/g, Math.floor(careerStats.currentYears));
+          aboutmd = aboutmd.replace(/{{CURRENT_MONTHS}}/g, Math.floor(careerStats.currentMonths));
+          aboutmd = aboutmd.replace(/{{LAST_UPDATED}}/g, today.format('YYYY년 MM월 DD일'));
+          
+          // 파일 저장
+          fs.writeFileSync('_tabs/about.md', aboutmd);
+          
+          console.log(`\n✅ 파일 업데이트 완료!`);
+          console.log(`Career updated: ${careerStats.totalYears.toFixed(1)} years total, ${careerStats.currentYears.toFixed(1)} years current`);
+          
+        } catch (error) {
+          console.error('❌ 파일 업데이트 실패:', error.message);
+          process.exit(1);
+        }
+        EOF
+        
+        node update-career.js
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add _tabs/about.md
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🔄 Update career data - $(date '+%Y-%m-%d')"
+          git push
+        fi
