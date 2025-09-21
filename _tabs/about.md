@@ -15,7 +15,7 @@ permalink: /about/
 
 
 ## 모내기
-todo
+<img src="https://ghchart.rshah.org/jhhan87" alt="2025jhhan's Github chart" />
 
 ## 기술 스택
 todo
